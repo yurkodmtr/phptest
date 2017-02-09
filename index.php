@@ -1,4 +1,23 @@
-﻿<!DOCTYPE html>
+﻿<?php
+error_reporting(E_ALL);
+require_once dirname(__FILE__) . '/config.php';
+require_once dirname(__FILE__) . '/include/Db.php';
+
+$query = 'SELECT * FROM `Users`';
+$users = Db::query($query);
+
+foreach ($users as $k => $v) {
+    print "$k = $v\n";
+}
+
+echo "<pre>";
+print_r($users);
+
+die();
+?>
+
+
+<!DOCTYPE html>
 <html>
 <head>
 <title>Home</title>
